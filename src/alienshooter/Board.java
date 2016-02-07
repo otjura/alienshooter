@@ -15,6 +15,7 @@ import java.awt.event.KeyEvent;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Board extends JPanel implements ActionListener {
     protected Timer timer;
@@ -30,8 +31,9 @@ public class Board extends JPanel implements ActionListener {
     private final int DELAY = 15;
     //private Image background = Toolkit.getDefaultToolkit()
     //            .createImage("images/space.png");
-
-    private final int[][] pos = {
+            
+    
+    /*private int[][] alienpositions = {
         {2380, 29}, {2500, 59}, {1380, 89},
         {780, 109}, {580, 139}, {680, 239},
         {790, 259}, {760, 50}, {790, 150},
@@ -41,7 +43,7 @@ public class Board extends JPanel implements ActionListener {
         {900, 259}, {660, 50}, {540, 90},
         {810, 220}, {860, 20}, {740, 180},
         {820, 128}, {490, 170}, {700, 30}
-    };
+    };*/
 
     public Board() {
         initBoard();
@@ -66,9 +68,10 @@ public class Board extends JPanel implements ActionListener {
     }*/
 
     public void initAliens() {
+        Random rnd = new Random();
         aliens = new ArrayList<>();
-        for (int[] p : pos) {
-            aliens.add(new Alien(p[0], p[1]));
+        for(int i=0; i < 30; i++) {
+            aliens.add(new Alien(rnd.nextInt(750)+10, 5));
         }
     }
 
@@ -105,16 +108,26 @@ public class Board extends JPanel implements ActionListener {
 
         g.setColor(Color.WHITE);
         g.drawString("Aliens left: " + aliens.size(), 5, 15);
-        g.drawString("Hitpoints left: " + craft.getHitpoints(), 10, 30);
-        g.drawString("Player score: " + player.getScore(), 15, 45);
+        g.drawString("Hitpoints left: " + craft.getHitpoints(), 5, 35);
+        g.drawString("Player score: " + player.getScore(), 5, 55);
     }
 
     private void drawGameOver(Graphics g) {
         String msg = "GAME OVER";
-        Font small = new Font("Helvetica", Font.BOLD, 16);
+        Font small = new Font("Helvetica", Font.BOLD, 26);
         FontMetrics fm = getFontMetrics(small);
 
         g.setColor(Color.WHITE);
+        g.setFont(small);
+        g.drawString(msg, (BOARDWIDTH - fm.stringWidth(msg)) / 2,
+                BOARDHEIGHT / 2);
+    }
+    
+    protected void drawPauseScreen(Graphics g) {
+        String msg = "PAUSED";
+        Font small = new Font("Helvetica", Font.BOLD, 26);
+        FontMetrics fm = getFontMetrics(small);
+        g.setColor(Color.YELLOW);
         g.setFont(small);
         g.drawString(msg, (BOARDWIDTH - fm.stringWidth(msg)) / 2,
                 BOARDHEIGHT / 2);
@@ -172,6 +185,8 @@ public class Board extends JPanel implements ActionListener {
 
     public void checkCollisions() {
         Rectangle craftbound = craft.getBounds();
+        ArrayList<Missile> ms = craft.getMissiles();
+        
         for (Alien alien : aliens) {
             Rectangle alienbound = alien.getBounds();
             if (craftbound.intersects(alienbound)) {
@@ -185,7 +200,6 @@ public class Board extends JPanel implements ActionListener {
             }
         }
 
-        ArrayList<Missile> ms = craft.getMissiles();
         for (Missile m : ms) {
             Rectangle r1 = m.getBounds();
             for (Alien alien : aliens) {

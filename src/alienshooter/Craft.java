@@ -57,5 +57,7 @@ public class Craft extends Sprite {
         //} while(true);
     } 
     
-    protected void pause() { }
+    protected void pause() { 
+        
+    }
 }
