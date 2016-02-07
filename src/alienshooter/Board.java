@@ -5,26 +5,31 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+import java.util.ArrayList;
 
 public class Board extends JPanel implements ActionListener {
-    private Timer timer;
+    protected Timer timer;
     private Craft craft;
+    private Player player;
     private ArrayList<Alien> aliens;
     private boolean ingame;
+    protected boolean paused;
     private final int INITIAL_PLAYER_POS_X = 400;
     private final int INITIAL_PLAYER_POS_Y = 550;
     private final int BOARDWIDTH = 800;
     private final int BOARDHEIGHT = 600;
     private final int DELAY = 15;
+    //private Image background = Toolkit.getDefaultToolkit()
+    //            .createImage("images/space.png");
 
     private final int[][] pos = {
         {2380, 29}, {2500, 59}, {1380, 89},
@@ -46,13 +51,19 @@ public class Board extends JPanel implements ActionListener {
         addKeyListener(new TAdapter());
         setFocusable(true);
         setBackground(Color.BLACK);
-        ingame = true;
+        initAliens();
         setPreferredSize(new Dimension(BOARDWIDTH, BOARDHEIGHT));
         craft = new Craft(INITIAL_PLAYER_POS_X, INITIAL_PLAYER_POS_Y);
-        initAliens();
+        ingame = true;
+        player = new Player();
         timer = new Timer(DELAY, this);
         timer.start();
     }
+    
+    /*@Override
+    public void paint(Graphics g) {
+        g.drawImage(background, 0, 0, null);
+    }*/
 
     public void initAliens() {
         aliens = new ArrayList<>();
@@ -73,12 +84,12 @@ public class Board extends JPanel implements ActionListener {
     }
 
     private void drawObjects(Graphics g) {
+        
+        ArrayList<Missile> ms = craft.getMissiles();
 
         if (craft.isVisible()) {
             g.drawImage(craft.getImage(), craft.getX(), craft.getY(), this);
         }
-
-        ArrayList<Missile> ms = craft.getMissiles();
 
         for (Missile m : ms) {
             if (m.isVisible()) {
@@ -94,14 +105,16 @@ public class Board extends JPanel implements ActionListener {
 
         g.setColor(Color.WHITE);
         g.drawString("Aliens left: " + aliens.size(), 5, 15);
+        g.drawString("Hitpoints left: " + craft.getHitpoints(), 10, 30);
+        g.drawString("Player score: " + player.getScore(), 15, 45);
     }
 
     private void drawGameOver(Graphics g) {
         String msg = "GAME OVER";
-        Font small = new Font("Helvetica", Font.BOLD, 14);
+        Font small = new Font("Helvetica", Font.BOLD, 16);
         FontMetrics fm = getFontMetrics(small);
 
-        g.setColor(Color.white);
+        g.setColor(Color.WHITE);
         g.setFont(small);
         g.drawString(msg, (BOARDWIDTH - fm.stringWidth(msg)) / 2,
                 BOARDHEIGHT / 2);
@@ -158,13 +171,17 @@ public class Board extends JPanel implements ActionListener {
     }
 
     public void checkCollisions() {
-        Rectangle r3 = craft.getBounds();
+        Rectangle craftbound = craft.getBounds();
         for (Alien alien : aliens) {
-            Rectangle r2 = alien.getBounds();
-            if (r3.intersects(r2)) {
-                craft.setVisible(false);
+            Rectangle alienbound = alien.getBounds();
+            if (craftbound.intersects(alienbound)) {
                 alien.setVisible(false);
-                ingame = false;
+                craft.hitpoints -= 20;
+                if (craft.hitpoints <= 0) {
+                    craft.setVisible(false);
+                    setBackground(Color.RED);
+                    ingame = false;
+                }
             }
         }
 
@@ -176,6 +193,7 @@ public class Board extends JPanel implements ActionListener {
                 if (r1.intersects(r2)) {
                     m.setVisible(false);
                     alien.setVisible(false);
+                    player.increaseScore(10);
                 }
             }
         }

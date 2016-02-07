@@ -3,7 +3,7 @@ package alienshooter;
 public class Missile extends Sprite {
     private final int BOARD_WIDTH = 790;
     private final int BOARD_HEIGHT = 590;
-    private final int MISSILE_SPEED = 2;
+    private final int MISSILE_SPEED = 3;
 
     public Missile(int x, int y) {
         super(x, y);
