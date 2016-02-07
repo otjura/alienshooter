@@ -6,20 +6,16 @@ public class Missile extends Sprite {
 
     public Missile(int x, int y) {
         super(x, y);
-
         initMissile();
     }
     
-    private void initMissile() {
-        
+    private void initMissile() {    
         loadImage("images/missile.png");
         getImageDimensions();        
     }
 
-    public void move() {
-        
+    public void move() {        
         x += MISSILE_SPEED;
-        
         if (x > BOARD_WIDTH)
             vis = false;
     }
