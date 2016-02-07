@@ -20,8 +20,8 @@ public class Board extends JPanel implements ActionListener {
     private Craft craft;
     private ArrayList<Alien> aliens;
     private boolean ingame;
-    private final int ICRAFT_X = 40;
-    private final int ICRAFT_Y = 60;
+    private final int INITIAL_PLAYER_POS_X = 400;
+    private final int INITIAL_PLAYER_POS_Y = 550;
     private final int BOARDWIDTH = 800;
     private final int BOARDHEIGHT = 600;
     private final int DELAY = 15;
@@ -48,7 +48,7 @@ public class Board extends JPanel implements ActionListener {
         setBackground(Color.BLACK);
         ingame = true;
         setPreferredSize(new Dimension(BOARDWIDTH, BOARDHEIGHT));
-        craft = new Craft(ICRAFT_X, ICRAFT_Y);
+        craft = new Craft(INITIAL_PLAYER_POS_X, INITIAL_PLAYER_POS_Y);
         initAliens();
         timer = new Timer(DELAY, this);
         timer.start();

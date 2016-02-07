@@ -1,7 +1,7 @@
 package alienshooter;
 
 public class Alien extends Sprite {
-    private final int INITIAL_X = 400;
+    private final int INITIAL_Y = 400;
 
     public Alien(int x, int y) {
         super(x, y);
@@ -14,9 +14,9 @@ public class Alien extends Sprite {
     }
 
     public void move() {
-        if (x < 0) {
-            x = INITIAL_X;
+        if (y < 0) {
+            y = INITIAL_Y;
         }
-        x -= 1;
+        y += 1;
     }
 }
