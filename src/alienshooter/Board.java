@@ -23,7 +23,8 @@ public class Board extends JPanel implements ActionListener {
     private Player player;
     private ArrayList<Alien> aliens;
     private boolean ingame;
-    protected boolean paused;
+    private boolean paused;
+    private Highscore highscore;
     private final int INITIAL_PLAYER_POS_X = 400;
     private final int INITIAL_PLAYER_POS_Y = 550;
     private final int BOARDWIDTH = 800;
@@ -31,25 +32,8 @@ public class Board extends JPanel implements ActionListener {
     private final int DELAY = 15;
     //private Image background = Toolkit.getDefaultToolkit()
     //            .createImage("images/space.png");
-            
     
-    /*private int[][] alienpositions = {
-        {2380, 29}, {2500, 59}, {1380, 89},
-        {780, 109}, {580, 139}, {680, 239},
-        {790, 259}, {760, 50}, {790, 150},
-        {980, 209}, {560, 45}, {510, 70},
-        {930, 159}, {590, 80}, {530, 60},
-        {940, 59}, {990, 30}, {920, 200},
-        {900, 259}, {660, 50}, {540, 90},
-        {810, 220}, {860, 20}, {740, 180},
-        {820, 128}, {490, 170}, {700, 30}
-    };*/
-
     public Board() {
-        initBoard();
-    }
-
-    private void initBoard() {
         addKeyListener(new TAdapter());
         setFocusable(true);
         setBackground(Color.BLACK);
@@ -61,6 +45,7 @@ public class Board extends JPanel implements ActionListener {
         timer = new Timer(DELAY, this);
         timer.start();
     }
+
     
     /*@Override
     public void paint(Graphics g) {
@@ -110,6 +95,7 @@ public class Board extends JPanel implements ActionListener {
         g.drawString("Aliens left: " + aliens.size(), 5, 15);
         g.drawString("Hitpoints left: " + craft.getHitpoints(), 5, 35);
         g.drawString("Player score: " + player.getScore(), 5, 55);
+        //g.drawString("High Score: " + scores.getHighScore(), 500, 15);
     }
 
     private void drawGameOver(Graphics g) {

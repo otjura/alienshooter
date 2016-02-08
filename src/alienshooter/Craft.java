@@ -12,10 +12,6 @@ public class Craft extends Sprite {
 
     public Craft(int x, int y) {
         super(x, y);
-        initCraft();
-    }
-
-    private void initCraft() {      
         hitpoints = 100;
         missiles = new ArrayList<>();
         loadImage("images/craft.png");
