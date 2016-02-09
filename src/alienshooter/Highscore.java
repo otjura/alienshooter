@@ -1,10 +1,7 @@
 package alienshooter;
 
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.io.File;
+import java.io.IOException;
 
 public class Highscore {
     
@@ -22,7 +19,14 @@ public class Highscore {
     }
     
     public void writeHighscoreToDisk() {
-        
+        File hs = new File("highscore.xd");
+        if(!hs.exists()) {
+            try {
+                hs.createNewFile();
+            } catch(IOException e) {
+                System.out.println("Can not make file");
+                System.exit(0);
+            }
+        }        
     }
-    
 }
