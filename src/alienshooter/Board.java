@@ -18,6 +18,11 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Board extends JPanel implements ActionListener {
+    private final int INITIAL_PLAYER_POS_X = 400;
+    private final int INITIAL_PLAYER_POS_Y = 550;
+    private final int BOARDWIDTH = 800;
+    private final int BOARDHEIGHT = 600;
+    private final int DELAY = 15;
     protected Timer timer;
     private Craft craft;
     private Player player;
@@ -25,15 +30,13 @@ public class Board extends JPanel implements ActionListener {
     private boolean ingame;
     private boolean paused;
     private Highscore highscore;
-    private final int INITIAL_PLAYER_POS_X = 400;
-    private final int INITIAL_PLAYER_POS_Y = 550;
-    private final int BOARDWIDTH = 800;
-    private final int BOARDHEIGHT = 600;
-    private final int DELAY = 15;
+    private int level;
+   
     //private Image background = Toolkit.getDefaultToolkit()
     //            .createImage("images/space.png");
     
-    public Board() {
+    public Board(int level) {
+        this.level = level;
         addKeyListener(new TAdapter());
         setFocusable(true);
         setBackground(Color.BLACK);
@@ -46,6 +49,10 @@ public class Board extends JPanel implements ActionListener {
         timer.start();
     }
 
+    
+    public int getLevel() {
+        return level;
+    }
     
     /*@Override
     public void paint(Graphics g) {
@@ -92,9 +99,10 @@ public class Board extends JPanel implements ActionListener {
         }
 
         g.setColor(Color.WHITE);
-        g.drawString("Aliens left: " + aliens.size(), 5, 15);
-        g.drawString("Hitpoints left: " + craft.getHitpoints(), 5, 35);
-        g.drawString("Player score: " + player.getScore(), 5, 55);
+        g.drawString("LEVEL " + this.getLevel(), 5, 15);
+        g.drawString("Aliens left: " + aliens.size(), 5, 30);
+        g.drawString("Hitpoints left: " + craft.getHitpoints(), 5, 45);
+        g.drawString("Player score: " + player.getScore(), 5, 60);
         //g.drawString("High Score: " + scores.getHighScore(), 500, 15);
     }
 
