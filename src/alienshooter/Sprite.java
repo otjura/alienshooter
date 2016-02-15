@@ -4,7 +4,7 @@ import java.awt.Image;
 import java.awt.Rectangle;
 import javax.swing.ImageIcon;
 
-public class Sprite {
+abstract class Sprite {
     protected int x;
     protected int y;
     protected int width;
