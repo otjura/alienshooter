@@ -6,11 +6,19 @@ import javax.swing.JFrame;
 public class Alienshooter extends JFrame {
     
     public Alienshooter() {     
-        initUI();
+        initGame();
     }
     
-    private void initUI() {      
-        add(new Board());
+    /*private void initStartScreen() {
+        add(new Startscreen());
+        setResizable(false);
+        pack();
+        setTitle("Alienshooter");
+        setLocationRelativeTo(null);
+    }*/
+    
+    private void initGame() {      
+        add(new Board(1));
         setResizable(false);
         pack();
         setTitle("Alienshooter");
