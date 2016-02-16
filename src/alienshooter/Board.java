@@ -208,11 +208,15 @@ public class Board extends JPanel implements ActionListener {
                 Rectangle r2 = alien.getBounds();
                 if (r1.intersects(r2)) {
                     m.setVisible(false);
-                    alien.setVisible(false);
-                    player.increaseScore(10);
-                    if(player.getScore() > highscore.getHighscore()) {
-                        highscore.setHighscore(player.getScore());
+                    alien.hit();
+                    if (alien.isDead()) {
+                        alien.setVisible(false);
+                        player.increaseScore(10);
+                        if(player.getScore() > highscore.getHighscore()) {
+                            highscore.setHighscore(player.getScore());
+                        }
                     }
+                    
                 }
             }
         }
