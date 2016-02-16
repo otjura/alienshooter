@@ -17,23 +17,30 @@ abstract class Sprite {
         this.y = y;
         vis = true;
     }
-
+    
+    //getters
+    public int getX() { return x; }
+    public int getY() { return y; }
+    public Image getImage() { return image; }
+    
     protected void getImageDimensions() {
         width = image.getWidth(null);
         height = image.getHeight(null);
     }
-
+    
+    public Rectangle getBounds() { 
+        return new Rectangle(x, y, width, height);
+    }    
+    
+    //setters
+    public void setVisible(Boolean visible) { vis = visible; }
+    
+    //others
+    public boolean isVisible() { return vis; }
+    
     protected void loadImage(String imageName) {
         ImageIcon ii = new ImageIcon(imageName);
         image = ii.getImage();
     }
-
-    public Image getImage() { return image; }
-    public int getX() { return x; }
-    public int getY() { return y; }
-    public boolean isVisible() { return vis; }
-    public void setVisible(Boolean visible) { vis = visible; }
-    public Rectangle getBounds() { 
-        return new Rectangle(x, y, width, height);
-    }
+    
 }
