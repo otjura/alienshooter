@@ -27,7 +27,7 @@ public class Board extends JPanel implements ActionListener {
     private final int BOARDHEIGHT = 600;
     private final int DELAY = 15;
     protected Timer timer;
-    private Craft craft;
+    private final Craft craft;
     protected Player player;
     private ArrayList<Alien> aliens;
     private boolean ingame;
@@ -179,7 +179,7 @@ public class Board extends JPanel implements ActionListener {
     }
     
     public void setNewHighscore() throws IOException {
-        if(player.getScore() > highscore.getHighscore()) {
+        if(player.getScore() > highscore.readHighscoreFromDisk()) {
             highscore.writeHighscoreToDisk(player.getScore());
         }
     }
@@ -210,6 +210,9 @@ public class Board extends JPanel implements ActionListener {
                     m.setVisible(false);
                     alien.setVisible(false);
                     player.increaseScore(10);
+                    if(player.getScore() > highscore.getHighscore()) {
+                        highscore.setHighscore(player.getScore());
+                    }
                 }
             }
         }

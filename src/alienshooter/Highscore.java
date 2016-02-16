@@ -17,6 +17,8 @@ public class Highscore {
     
     public int getHighscore() { return highscore; }
     
+    public void setHighscore(int newscore) { highscore = newscore; } 
+    
     public int readHighscoreFromDisk() {
         File hs = new File(SCOREFILE);
         try {
