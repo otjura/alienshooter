@@ -12,10 +12,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Board extends JPanel implements ActionListener {
     private final int INITIAL_PLAYER_POS_X = 400;
@@ -25,7 +28,7 @@ public class Board extends JPanel implements ActionListener {
     private final int DELAY = 15;
     protected Timer timer;
     private Craft craft;
-    private Player player;
+    protected Player player;
     private ArrayList<Alien> aliens;
     private boolean ingame;
     private boolean paused;
@@ -42,6 +45,7 @@ public class Board extends JPanel implements ActionListener {
         setBackground(Color.BLACK);
         initAliens();
         setPreferredSize(new Dimension(BOARDWIDTH, BOARDHEIGHT));
+        highscore = new Highscore();
         craft = new Craft(INITIAL_PLAYER_POS_X, INITIAL_PLAYER_POS_Y);
         ingame = true;
         player = new Player();
@@ -50,9 +54,7 @@ public class Board extends JPanel implements ActionListener {
     }
 
     
-    public int getLevel() {
-        return level;
-    }
+    public int getLevel() { return level; }
     
     /*@Override
     public void paint(Graphics g) {
@@ -103,14 +105,13 @@ public class Board extends JPanel implements ActionListener {
         g.drawString("Aliens left: " + aliens.size(), 5, 30);
         g.drawString("Hitpoints left: " + craft.getHitpoints(), 5, 45);
         g.drawString("Player score: " + player.getScore(), 5, 60);
-        //g.drawString("High Score: " + scores.getHighScore(), 500, 15);
+        g.drawString("High Score: " + highscore.getHighscore(), 600, 15);
     }
 
     private void drawGameOver(Graphics g) {
         String msg = "GAME OVER";
         Font small = new Font("Helvetica", Font.BOLD, 26);
         FontMetrics fm = getFontMetrics(small);
-
         g.setColor(Color.WHITE);
         g.setFont(small);
         g.drawString(msg, (BOARDWIDTH - fm.stringWidth(msg)) / 2,
@@ -133,20 +134,20 @@ public class Board extends JPanel implements ActionListener {
         updateCraft();
         updateMissiles();
         updateAliens();
-        checkCollisions();
+        try {
+            checkCollisions();
+        } catch (IOException ex) {
+            Logger.getLogger(Board.class.getName()).log(Level.SEVERE, null, ex);
+        }
         repaint();
     }
 
     private void inGame() {      
-        if (!ingame) {
-            timer.stop();
-        }
+        if (!ingame) timer.stop();
     }
 
     private void updateCraft() {
-        if (craft.isVisible()) {
-            craft.move();
-        }
+        if (craft.isVisible()) craft.move();
     }
 
     private void updateMissiles() {
@@ -176,8 +177,14 @@ public class Board extends JPanel implements ActionListener {
             }
         }
     }
-
-    public void checkCollisions() {
+    
+    public void setNewHighscore() throws IOException {
+        if(player.getScore() > highscore.getHighscore()) {
+            highscore.writeHighscoreToDisk(player.getScore());
+        }
+    }
+    
+    public void checkCollisions() throws IOException {
         Rectangle craftbound = craft.getBounds();
         ArrayList<Missile> ms = craft.getMissiles();
         
@@ -189,6 +196,7 @@ public class Board extends JPanel implements ActionListener {
                 if (craft.hitpoints <= 0) {
                     craft.setVisible(false);
                     setBackground(Color.RED);
+                    setNewHighscore();
                     ingame = false;
                 }
             }
