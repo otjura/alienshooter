@@ -15,6 +15,7 @@ public class Alienshooter extends JFrame {
         pack();
         setTitle("Alienshooter");
         setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }*/
     
     private void initGame() {      
