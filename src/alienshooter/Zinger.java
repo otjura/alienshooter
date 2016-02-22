@@ -1,9 +1,9 @@
 package alienshooter;
 
 public class Zinger extends Weapon {
-    private final int DAMAGE = 30;
-    private final int FIRERATE = 1;
-     private final String MISSILE = "images/zinger.png";
+    protected static final int DAMAGE = 30;
+    protected static final int FIRERATE = 1;
+    protected static final String MISSILE = "images/zinger.png";
     
     public Zinger() {
         super(Weapontype.ZINGER, 30, 1);

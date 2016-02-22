@@ -13,7 +13,7 @@ public class Alien extends Sprite {
     
     public int getHitpoints() { return hitpoints; }
     
-    public void hit() { hitpoints -= 10; }
+    public void hit(int dmg) { hitpoints -= dmg; }
     
     public boolean isDead() {
         boolean dead = false;

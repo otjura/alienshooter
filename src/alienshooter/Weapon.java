@@ -1,6 +1,6 @@
 package alienshooter;
 
-public class Weapon {
+abstract class Weapon {
     
     private Sprite missile;
     private int damage;
@@ -18,8 +18,23 @@ public class Weapon {
     }
     
     public Weapontype getWeapontype() { return weapontype; }
-    public int getDamage() { return damage; }
-    public int getFirerate() { return firerate; }
+    public int getDamage() { 
+        switch(weapontype) {
+            case LASER: damage = Laser.DAMAGE; break;
+            case BLASTER: damage = Blaster.DAMAGE; break;
+            case ZINGER: damage = Zinger.DAMAGE; break;
+        }    
+        return damage; 
+    }
+    
+    public int getFirerate() { 
+        switch(weapontype) {
+            case LASER: firerate = Laser.FIRERATE; break;
+            case BLASTER: firerate = Blaster.FIRERATE; break;
+            case ZINGER: firerate = Zinger.FIRERATE; break;
+        }
+        return firerate; 
+    }
     
     public void setWeapontype(Weapontype w) { weapontype = w; }
     

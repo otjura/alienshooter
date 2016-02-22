@@ -15,7 +15,7 @@ public class Craft extends Sprite {
         super(x, y);
         hitpoints = 100;
         missiles = new ArrayList<>();
-        weapon = new Weapon(Weapontype.LASER);
+        weapon = new Laser();
         loadImage("images/craft.png");
         getImageDimensions();
     }
@@ -29,6 +29,7 @@ public class Craft extends Sprite {
 
     public ArrayList getMissiles() { return missiles; }
     public int getHitpoints() { return hitpoints; }
+    public int getDamage() { return weapon.getDamage(); }
 
     public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
@@ -61,9 +62,9 @@ public class Craft extends Sprite {
     
     public void changeWeapon() {
         switch(weapon.getWeapontype()) {
-            case LASER: weapon = new Weapon(Weapontype.BLASTER); break;
-            case BLASTER: weapon = new Weapon(Weapontype.ZINGER); break;
-            case ZINGER: weapon = new Weapon(Weapontype.LASER); break;
+            case LASER: weapon = new Laser(); break;
+            case BLASTER: weapon = new Zinger(); break;
+            case ZINGER: weapon = new Laser(); break;
         }         
     }
     

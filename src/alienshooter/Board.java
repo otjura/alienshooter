@@ -207,8 +207,9 @@ public class Board extends JPanel implements ActionListener {
             for (Alien alien : aliens) {
                 Rectangle r2 = alien.getBounds();
                 if (r1.intersects(r2)) {
+                    alien.hit(10); //TODO NullPointerException fail
                     m.setVisible(false);
-                    alien.hit();
+                    
                     if (alien.isDead()) {
                         alien.setVisible(false);
                         player.increaseScore(10);
