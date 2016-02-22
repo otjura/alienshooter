@@ -6,20 +6,23 @@ public class Missile extends Sprite {
     private final int MISSILE_SPEED = 4;
     private Weapontype weapontype;
 
-    public Missile(int x, int y) {
+    public Missile(int x, int y, Weapontype weapontype) {
         super(x, y);
-        /*switch(weapontype) {
+        switch(weapontype) {
             case LASER: loadImage("images/laser.png"); break;
             case BLASTER: loadImage("images/blaster.png"); break;
             case ZINGER: loadImage("images/zinger.png"); break;
             default: loadImage("images/missile.png"); break;
-        }*/
-        loadImage("images/laser.png");
+        }
         getImageDimensions();        
     }
 
     public void move() {        
         y -= MISSILE_SPEED;
         if (x > BOARD_WIDTH || y > BOARD_HEIGHT) vis = false;
+    }
+    
+    public void loadImage() {
+        
     }
 }

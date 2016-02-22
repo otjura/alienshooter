@@ -51,7 +51,8 @@ public class Craft extends Sprite {
     }
 
     public void fire() {
-        missiles.add(new Missile(x + width, y + height / 2));
+        missiles.add(new Missile(x+width, y+height / 2, 
+                weapon.getWeapontype()));
     }
     
     public void bomb() {
@@ -59,7 +60,11 @@ public class Craft extends Sprite {
     }
     
     public void changeWeapon() {
-        fire();         
+        switch(weapon.getWeapontype()) {
+            case LASER: weapon = new Weapon(Weapontype.BLASTER); break;
+            case BLASTER: weapon = new Weapon(Weapontype.ZINGER); break;
+            case ZINGER: weapon = new Weapon(Weapontype.LASER); break;
+        }         
     }
     
     protected void pause() { 
