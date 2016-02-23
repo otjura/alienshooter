@@ -23,13 +23,17 @@ public class Craft extends Sprite {
     public void move() {
         x += dx;
         y += dy;
-        if (x < 1) x = 1;
-        if (y < 1) y = 1;
+        if (x < 1) x = 5;
+        if (y < 1) y = 5;
+        //if (x > 800) x = 790;
+        //if (y < 600) y = 590;
     }
 
     public ArrayList getMissiles() { return missiles; }
     public int getHitpoints() { return hitpoints; }
     public int getDamage() { return weapon.getDamage(); }
+    public int getCurrentX() {return x; }
+    public int getCurrentY() { return y; }
     public String getWeapon() { 
         return weapon.getWeapontype().toString(); }
 

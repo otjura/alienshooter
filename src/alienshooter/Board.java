@@ -119,6 +119,8 @@ public class Board extends JPanel implements ActionListener {
         g.drawString("Hitpoints left: " + craft.getHitpoints(), 5, 45);
         g.drawString("Player score: " + player.getScore(), 5, 60);
         g.drawString("Current weapon: " + craft.getWeapon(), 300, 15);
+        g.drawString("X: " + craft.getCurrentX(), 300, 30);
+        g.drawString("Y: " + craft.getCurrentX(), 300, 45);
         g.drawString("High Score: " + highscore.getHighscore(), 600, 15);
     }
 
