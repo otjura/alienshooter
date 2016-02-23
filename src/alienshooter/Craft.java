@@ -68,7 +68,7 @@ public class Craft extends Sprite {
     
     public void changeWeapon() {
         switch(weapon.getWeapontype()) {
-            case LASER: weapon = new Laser(); break;
+            case LASER: weapon = new Blaster(); break;
             case BLASTER: weapon = new Zinger(); break;
             case ZINGER: weapon = new Laser(); break;
         }         
