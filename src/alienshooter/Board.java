@@ -64,9 +64,22 @@ public class Board extends JPanel implements ActionListener {
     public void initAliens() {
         Random rnd = new Random();
         aliens = new ArrayList<>();
-        for(int i=0; i < 30; i++) {
-            aliens.add(new Alien(rnd.nextInt(750)+10, 5));
+        if(level == 1) {
+            for(int i=0; i < 30; i++) {
+            aliens.add(new Deme(rnd.nextInt(750)+10, 5));
+            }
+        } 
+        if(level == 2) {
+            for(int i=0; i < 30; i++) {
+            aliens.add(new Goro(rnd.nextInt(750)+10, 5));
+            }
         }
+        if(level == 3) {
+            for(int i=0; i < 30; i++) {
+            aliens.add(new Xeno(rnd.nextInt(750)+10, 5));
+            }
+        }
+        
     }
 
     @Override
@@ -105,6 +118,7 @@ public class Board extends JPanel implements ActionListener {
         g.drawString("Aliens left: " + aliens.size(), 5, 30);
         g.drawString("Hitpoints left: " + craft.getHitpoints(), 5, 45);
         g.drawString("Player score: " + player.getScore(), 5, 60);
+        g.drawString("Current weapon: " + craft.getWeapon(), 300, 15);
         g.drawString("High Score: " + highscore.getHighscore(), 600, 15);
     }
 
@@ -208,6 +222,7 @@ public class Board extends JPanel implements ActionListener {
                 Rectangle r2 = alien.getBounds();
                 if (r1.intersects(r2)) {
                     alien.hit(10); //TODO NullPointerException fail
+                                   //when attempting m.getDamage()
                     m.setVisible(false);
                     
                     if (alien.isDead()) {

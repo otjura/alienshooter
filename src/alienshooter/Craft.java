@@ -30,6 +30,8 @@ public class Craft extends Sprite {
     public ArrayList getMissiles() { return missiles; }
     public int getHitpoints() { return hitpoints; }
     public int getDamage() { return weapon.getDamage(); }
+    public String getWeapon() { 
+        return weapon.getWeapontype().toString(); }
 
     public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
