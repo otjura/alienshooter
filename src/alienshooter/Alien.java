@@ -1,6 +1,6 @@
 package alienshooter;
 
-public class Alien extends Sprite {
+abstract class Alien extends Sprite {
     private final int INITIAL_Y = 400;
     private int hitpoints;
 

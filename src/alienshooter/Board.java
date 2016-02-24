@@ -28,7 +28,7 @@ public class Board extends JPanel implements ActionListener {
     private final int DELAY = 15;
     protected Timer timer;
     private final Craft craft;
-    protected Player player;
+    private Player player;
     private ArrayList<Alien> aliens;
     private boolean ingame;
     private boolean paused;
@@ -78,8 +78,7 @@ public class Board extends JPanel implements ActionListener {
             for(int i=0; i < 30; i++) {
             aliens.add(new Xeno(rnd.nextInt(750)+10, 5));
             }
-        }
-        
+        }       
     }
 
     @Override
@@ -119,8 +118,8 @@ public class Board extends JPanel implements ActionListener {
         g.drawString("Hitpoints left: " + craft.getHitpoints(), 5, 45);
         g.drawString("Player score: " + player.getScore(), 5, 60);
         g.drawString("Current weapon: " + craft.getWeapon(), 300, 15);
-        g.drawString("X: " + craft.getCurrentX(), 300, 30);
-        g.drawString("Y: " + craft.getCurrentX(), 300, 45);
+        g.drawString("X: " + craft.getX(), 300, 30);
+        g.drawString("Y: " + craft.getY(), 300, 45);
         g.drawString("High Score: " + highscore.getHighscore(), 600, 15);
     }
 
@@ -239,6 +238,8 @@ public class Board extends JPanel implements ActionListener {
             }
         }
     }
+    
+    private void pause() { }
 
     private class TAdapter extends KeyAdapter {
         @Override
