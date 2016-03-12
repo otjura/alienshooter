@@ -5,7 +5,6 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -30,7 +29,6 @@ public class Board extends JPanel implements ActionListener {
     private final int BOARDWIDTH = 800;
     private final int BOARDHEIGHT = 600;
     private final int DELAY = 15;
-    protected Timer timer;
     private final Craft craft;
     private Player player;
     private ArrayList<Alien> aliens;
@@ -38,6 +36,7 @@ public class Board extends JPanel implements ActionListener {
     private boolean paused;
     private Highscore highscore;
     private int level;
+    protected Timer timer;
     
     public Board(int level) {
         this.level = level;
@@ -56,8 +55,17 @@ public class Board extends JPanel implements ActionListener {
 
     //GETTERS & SETTERS
     
+    /**
+     * Returns level of board.
+     * @return 1..3 
+     */
     public int getLevel() { return level; }
     
+    /**
+     * Sets new highscore if current player score is higher than one saved in 
+     * highscore.xd file.
+     * @throws IOException 
+     */
     public void setNewHighscore() throws IOException {
         if(player.getScore() > highscore.readHighscoreFromDisk()) {
             highscore.writeHighscoreToDisk(player.getScore());
@@ -68,7 +76,7 @@ public class Board extends JPanel implements ActionListener {
     //REST OF METHODS
     
     /**
-     * Initializes aliens randomly with start point at top quarter.
+     * Initializes thirty aliens randomly with start point at top quarter.
      * 
      */
     public void initAliens() {
@@ -82,12 +90,12 @@ public class Board extends JPanel implements ActionListener {
         } 
         if(level == 2) {
             for(int i=0; i < 30; i++) {
-            aliens.add(new Goro(rnd.nextInt(750)+10, 5));
+            aliens.add(new Goro(rnd.nextInt(750)+10, rnd.nextInt(195)+5));
             }
         }
         if(level == 3) {
             for(int i=0; i < 30; i++) {
-            aliens.add(new Xeno(rnd.nextInt(750)+10, 5));
+            aliens.add(new Xeno(rnd.nextInt(750)+10, rnd.nextInt(195)+5));
             }
         }       
     }
@@ -103,6 +111,10 @@ public class Board extends JPanel implements ActionListener {
         Toolkit.getDefaultToolkit().sync();
     }
 
+    /**
+     * Handles drawing of all graphic objects on board and their visibility.
+     * @param g 
+     */
     private void drawObjects(Graphics g) {      
         ArrayList<Missile> ms = craft.getMissiles();
 
@@ -132,7 +144,11 @@ public class Board extends JPanel implements ActionListener {
         g.drawString("Y: " + craft.getY(), 300, 45);
         g.drawString("High Score: " + highscore.getHighscore(), 600, 15);
     }
-
+    
+    /**
+     * Redraws board as game over screen.
+     * @param g 
+     */
     private void drawGameOver(Graphics g) {
         String msg = "GAME OVER";
         Font small = new Font("Helvetica", Font.BOLD, 28);
@@ -143,6 +159,10 @@ public class Board extends JPanel implements ActionListener {
                 BOARDHEIGHT / 2);
     }
     
+    /**
+     * Redraws board as pause screen.
+     * @param g 
+     */
     protected void drawPauseScreen(Graphics g) {
         String msg = "PAUSED";
         Font small = new Font("Helvetica", Font.BOLD, 26);
@@ -166,15 +186,24 @@ public class Board extends JPanel implements ActionListener {
         }
         repaint();
     }
-
+    
+    /**
+     * Stops thread timer if in game condition is false.
+     */
     private void inGame() {      
         if (!ingame) timer.stop();
     }
 
+    /**
+     * Updates position of player craft.
+     */
     private void updateCraft() {
         if (craft.isVisible()) craft.move();
     }
-
+    
+    /**
+     * Updates position and visibility of missiles.
+     */
     private void updateMissiles() {
         ArrayList<Missile> ms = craft.getMissiles();
         for (int i = 0; i < ms.size(); i++) {
@@ -186,7 +215,11 @@ public class Board extends JPanel implements ActionListener {
             }
         }
     }
-
+    
+    /**
+     * Updates position of aliens. If no aliens exist on board, sets ingame flag
+     * to false which ends the game.
+     */
     private void updateAliens() {
         if (aliens.isEmpty()) {
             ingame = false;
@@ -202,7 +235,11 @@ public class Board extends JPanel implements ActionListener {
             }
         }
     }
-
+    
+    /**
+     * Checks collisions of all graphic objects on board.
+     * @throws IOException 
+     */
     public void checkCollisions() throws IOException {
         Rectangle craftbound = craft.getBounds();
         ArrayList<Missile> ms = craft.getMissiles();
@@ -243,8 +280,14 @@ public class Board extends JPanel implements ActionListener {
         }
     }
     
+    /**
+     * Pauses game with player input.
+     */
     private void pause() { }
 
+    /**
+     * Compulsory keyadapter reimplementation.
+     */
     private class TAdapter extends KeyAdapter {
         @Override
         public void keyReleased(KeyEvent e) {
