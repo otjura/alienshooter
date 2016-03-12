@@ -20,6 +20,10 @@ import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Initializes board and manages all visible actions happening on it.
+ * @author Otso
+ */
 public class Board extends JPanel implements ActionListener {
     private final int INITIAL_PLAYER_POS_X = 400;
     private final int INITIAL_PLAYER_POS_Y = 550;
@@ -34,9 +38,6 @@ public class Board extends JPanel implements ActionListener {
     private boolean paused;
     private Highscore highscore;
     private int level;
-   
-    //private Image background = Toolkit.getDefaultToolkit()
-    //            .createImage("images/space.png");
     
     public Board(int level) {
         this.level = level;
@@ -53,20 +54,30 @@ public class Board extends JPanel implements ActionListener {
         timer.start();
     }
 
+    //GETTERS & SETTERS
     
     public int getLevel() { return level; }
     
-    /*@Override
-    public void paint(Graphics g) {
-        g.drawImage(background, 0, 0, null);
-    }*/
-
+    public void setNewHighscore() throws IOException {
+        if(player.getScore() > highscore.readHighscoreFromDisk()) {
+            highscore.writeHighscoreToDisk(player.getScore());
+        }
+    }
+    
+    
+    //REST OF METHODS
+    
+    /**
+     * Initializes aliens randomly with start point at top quarter.
+     * 
+     */
     public void initAliens() {
+        //@TODO prevent aliens being in same space
         Random rnd = new Random();
         aliens = new ArrayList<>();
         if(level == 1) {
             for(int i=0; i < 30; i++) {
-            aliens.add(new Deme(rnd.nextInt(750)+10, 5));
+            aliens.add(new Deme(rnd.nextInt(775)+5, rnd.nextInt(195)+5));
             }
         } 
         if(level == 2) {
@@ -92,8 +103,7 @@ public class Board extends JPanel implements ActionListener {
         Toolkit.getDefaultToolkit().sync();
     }
 
-    private void drawObjects(Graphics g) {
-        
+    private void drawObjects(Graphics g) {      
         ArrayList<Missile> ms = craft.getMissiles();
 
         if (craft.isVisible()) {
@@ -125,7 +135,7 @@ public class Board extends JPanel implements ActionListener {
 
     private void drawGameOver(Graphics g) {
         String msg = "GAME OVER";
-        Font small = new Font("Helvetica", Font.BOLD, 26);
+        Font small = new Font("Helvetica", Font.BOLD, 28);
         FontMetrics fm = getFontMetrics(small);
         g.setColor(Color.WHITE);
         g.setFont(small);
@@ -192,13 +202,7 @@ public class Board extends JPanel implements ActionListener {
             }
         }
     }
-    
-    public void setNewHighscore() throws IOException {
-        if(player.getScore() > highscore.readHighscoreFromDisk()) {
-            highscore.writeHighscoreToDisk(player.getScore());
-        }
-    }
-    
+
     public void checkCollisions() throws IOException {
         Rectangle craftbound = craft.getBounds();
         ArrayList<Missile> ms = craft.getMissiles();

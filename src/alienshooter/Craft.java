@@ -3,6 +3,10 @@ package alienshooter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
+/**
+ * Craft class has two subclasses. It can't be initialized by itself.
+ * 
+ */
 public class Craft extends Sprite {
     private int dx;
     private int dy;
@@ -19,7 +23,7 @@ public class Craft extends Sprite {
         loadImage("images/craft.png");
         getImageDimensions();
     }
-
+    
     public void move() {
         x += dx;
         y += dy;
@@ -28,13 +32,13 @@ public class Craft extends Sprite {
         if (x > 780) x = 779;
         if (y > 580) y = 579;
     }
-
+    
     public ArrayList getMissiles() { return missiles; }
     public int getHitpoints() { return hitpoints; }
     public int getDamage() { return weapon.getDamage(); }
     public String getWeapon() { 
         return weapon.getWeapontype().toString(); }
-
+    
     public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
         if (key == KeyEvent.VK_Z)     fire();

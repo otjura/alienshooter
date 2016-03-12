@@ -1,5 +1,9 @@
 package alienshooter;
 
+/**
+ * Weakest alien.
+ * @author Otso
+ */
 public class Deme extends Alien {
     private static final String PICTURE = "images/deme.png";
     private static final Alientype TYPE = Alientype.DEME;
@@ -14,5 +18,10 @@ public class Deme extends Alien {
     
     public String getType() {
         return TYPE.toString();
+    }
+    
+     public void move() {
+        if (y < 0) y = 400;
+        y += 1;
     }
 }

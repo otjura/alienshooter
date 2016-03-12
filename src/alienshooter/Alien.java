@@ -1,5 +1,10 @@
 package alienshooter;
 
+/**
+ * Alien class has three subclasses, representing alien types. It can't be 
+ * initialized by itself.
+ * @author Otso
+ */
 abstract class Alien extends Sprite {
     private final int INITIAL_Y = 400;
     private int hitpoints;
@@ -16,9 +21,8 @@ abstract class Alien extends Sprite {
     public void hit(int dmg) { hitpoints -= dmg; }
     
     public boolean isDead() {
-        boolean dead = false;
-        if(hitpoints <= 0) dead = true;
-        return dead;
+        if(hitpoints <= 0) return true;
+        return false;
     }
     
     public void move() {

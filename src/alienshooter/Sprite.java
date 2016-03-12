@@ -4,6 +4,9 @@ import java.awt.Image;
 import java.awt.Rectangle;
 import javax.swing.ImageIcon;
 
+/**
+ * Controls graphic object visibility and placement. 
+ */
 abstract class Sprite {
     protected int x;
     protected int y;
