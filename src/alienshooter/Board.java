@@ -16,8 +16,6 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Initializes board and manages all visible actions happening on it.
@@ -32,7 +30,6 @@ import java.util.logging.Logger;
     private Player player;
     private ArrayList<Alien> aliens;
     private boolean ingame;
-    private boolean paused;
     private Highscore highscore;
     private int level;
     private Timer timer;
@@ -45,7 +42,7 @@ import java.util.logging.Logger;
         initAliens();
         setPreferredSize(new Dimension(BOARDWIDTH, BOARDHEIGHT));
         highscore = new Highscore();
-        craft = new Taiga(INITIAL_PLAYER_POS_X, INITIAL_PLAYER_POS_Y);
+        craft = new Taiga(INITIAL_PLAYER_POS_X, INITIAL_PLAYER_POS_Y); //change to switch craft type
         ingame = true;
         player = new Player();
         timer = new Timer(DELAY, this);
@@ -254,7 +251,7 @@ import java.util.logging.Logger;
             Rectangle alienbound = alien.getBounds();
             if (craftbound.intersects(alienbound)) {
                 alien.setVisible(false);
-                craft.decreaseHitpoints(20);
+                craft.decreaseHitpoints(20); //collision always -20hp
                 if (craft.getHitpoints() <= 0) {
                     quitGame();
                 }
@@ -281,11 +278,6 @@ import java.util.logging.Logger;
             }
         });
     }
-    
-    /**
-     * Pauses game with player input.
-     */
-    private void pause() { }
     
     /**
      * Writes score to disk and displays game over screen.

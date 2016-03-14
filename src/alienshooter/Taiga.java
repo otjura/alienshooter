@@ -16,7 +16,12 @@ class Taiga extends Craft {
         getImageDimensions();
     }
     
+    @Override
     public int getHitpoints() { return hitpoints; }
+    
+    @Override
     public void setHitpoints(int hitpoints) { this.hitpoints = hitpoints; }
+    
+    @Override
     public void decreaseHitpoints(int dmg) { hitpoints -= dmg; } 
 }

@@ -18,5 +18,10 @@ class Goro extends Alien {
     public String getType() {
         return TYPE.toString();
     }
+    
+     public void move() {
+        if (y < 0) y = 400;
+        y += 1;
+    }
 
 }
