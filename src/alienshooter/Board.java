@@ -21,9 +21,8 @@ import java.util.logging.Logger;
 
 /**
  * Initializes board and manages all visible actions happening on it.
- * @author Otso
  */
-public class Board extends JPanel implements ActionListener {
+ class Board extends JPanel implements ActionListener {
     private final int INITIAL_PLAYER_POS_X = 400;
     private final int INITIAL_PLAYER_POS_Y = 550;
     private final int BOARDWIDTH = 800;
@@ -36,7 +35,22 @@ public class Board extends JPanel implements ActionListener {
     private boolean paused;
     private Highscore highscore;
     private int level;
-    protected Timer timer;
+    private Timer timer;
+    
+    public Board() {
+        level = 1;
+        addKeyListener(new TAdapter());
+        setFocusable(true);
+        setBackground(Color.BLACK);
+        initAliens();
+        setPreferredSize(new Dimension(BOARDWIDTH, BOARDHEIGHT));
+        highscore = new Highscore();
+        craft = new Taiga(INITIAL_PLAYER_POS_X, INITIAL_PLAYER_POS_Y);
+        ingame = true;
+        player = new Player();
+        timer = new Timer(DELAY, this);
+        timer.start();
+    }
     
     public Board(int level) {
         this.level = level;
@@ -46,18 +60,16 @@ public class Board extends JPanel implements ActionListener {
         initAliens();
         setPreferredSize(new Dimension(BOARDWIDTH, BOARDHEIGHT));
         highscore = new Highscore();
-        craft = new Craft(INITIAL_PLAYER_POS_X, INITIAL_PLAYER_POS_Y);
+        craft = new Taiga(INITIAL_PLAYER_POS_X, INITIAL_PLAYER_POS_Y);
         ingame = true;
         player = new Player();
         timer = new Timer(DELAY, this);
         timer.start();
     }
-
-    //GETTERS & SETTERS
     
     /**
      * Returns level of board.
-     * @return 1..3 
+     * @return integer 1..3 
      */
     public int getLevel() { return level; }
     
@@ -72,11 +84,9 @@ public class Board extends JPanel implements ActionListener {
         }
     }
     
-    
-    //REST OF METHODS
-    
     /**
      * Initializes thirty aliens randomly with start point at top quarter.
+     * Alientype depends on level.
      * 
      */
     public void initAliens() {
@@ -179,11 +189,7 @@ public class Board extends JPanel implements ActionListener {
         updateCraft();
         updateMissiles();
         updateAliens();
-        try {
-            checkCollisions();
-        } catch (IOException ex) {
-            Logger.getLogger(Board.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        checkCollisions();
         repaint();
     }
     
@@ -240,7 +246,7 @@ public class Board extends JPanel implements ActionListener {
      * Checks collisions of all graphic objects on board.
      * @throws IOException 
      */
-    public void checkCollisions() throws IOException {
+    public void checkCollisions() {
         Rectangle craftbound = craft.getBounds();
         ArrayList<Missile> ms = craft.getMissiles();
         
@@ -248,23 +254,19 @@ public class Board extends JPanel implements ActionListener {
             Rectangle alienbound = alien.getBounds();
             if (craftbound.intersects(alienbound)) {
                 alien.setVisible(false);
-                craft.hitpoints -= 20;
-                if (craft.hitpoints <= 0) {
-                    craft.setVisible(false);
-                    setBackground(Color.RED);
-                    setNewHighscore();
-                    ingame = false;
+                craft.decreaseHitpoints(20);
+                if (craft.getHitpoints() <= 0) {
+                    quitGame();
                 }
             }
         }
 
-        for (Missile m : ms) {
+        ms.stream().forEach((m) -> {
             Rectangle r1 = m.getBounds();
             for (Alien alien : aliens) {
                 Rectangle r2 = alien.getBounds();
                 if (r1.intersects(r2)) {
-                    alien.hit(10); //TODO NullPointerException fail
-                                   //when attempting m.getDamage()
+                    alien.hit(10); //TODO NullPointerException fail when attempting m.getDamage()
                     m.setVisible(false);
                     
                     if (alien.isDead()) {
@@ -277,13 +279,27 @@ public class Board extends JPanel implements ActionListener {
                     
                 }
             }
-        }
+        });
     }
     
     /**
      * Pauses game with player input.
      */
     private void pause() { }
+    
+    /**
+     * Writes score to disk and displays game over screen.
+     */
+    protected void quitGame() {
+        try {
+            craft.setVisible(false);
+            setBackground(Color.RED);
+            setNewHighscore();
+            ingame = false;
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
     /**
      * Compulsory keyadapter reimplementation.
@@ -295,6 +311,7 @@ public class Board extends JPanel implements ActionListener {
         }
         @Override
         public void keyPressed(KeyEvent e) {
+            if (e.getKeyCode() == KeyEvent.VK_ESCAPE) quitGame();
             craft.keyPressed(e);
         }
     }

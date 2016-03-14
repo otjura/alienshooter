@@ -2,9 +2,9 @@ package alienshooter;
 
 /**
  * Weakest alien.
- * @author Otso
+ *
  */
-public class Deme extends Alien {
+class Deme extends Alien {
     private static final String PICTURE = "images/deme.png";
     private static final Alientype TYPE = Alientype.DEME;
     private int hitpoints = 10;

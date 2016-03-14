@@ -1,10 +1,10 @@
 package alienshooter;
 
-public class Missile extends Sprite {
+class Missile extends Sprite {
     private final int BOARD_WIDTH = 790;
     private final int BOARD_HEIGHT = 590;
     private final int MISSILE_SPEED = 4;
-    private int damage;
+    protected int damage;
     private Weapontype weapontype;
 
     public Missile(int x, int y, Weapontype weapontype) {

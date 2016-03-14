@@ -4,24 +4,22 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 /**
- * Craft class has two subclasses. It can't be initialized by itself.
+ * Craft class has two subclasses. It can't be initialized by itself. All crafts
+ * begin with weapon laser selected first.
  * 
  */
-public class Craft extends Sprite {
+abstract class Craft extends Sprite {
     private int dx;
     private int dy;
-    protected int hitpoints;
+    private int hitpoints;
     private final int SPEED = 2;
     private ArrayList<Missile> missiles;
     private Weapon weapon;
 
     public Craft(int x, int y) {
         super(x, y);
-        hitpoints = 100;
         missiles = new ArrayList<>();
         weapon = new Laser();
-        loadImage("images/craft.png");
-        getImageDimensions();
     }
     
     public void move() {
@@ -36,8 +34,10 @@ public class Craft extends Sprite {
     public ArrayList getMissiles() { return missiles; }
     public int getHitpoints() { return hitpoints; }
     public int getDamage() { return weapon.getDamage(); }
-    public String getWeapon() { 
-        return weapon.getWeapontype().toString(); }
+    public String getWeapon() { return weapon.getWeapontype().toString(); }
+    
+    public void setHitpoints(int hitpoints) { this.hitpoints = hitpoints; }
+    public void decreaseHitpoints(int dmg) { hitpoints -= dmg; } 
     
     public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
@@ -49,6 +49,7 @@ public class Craft extends Sprite {
         if (key == KeyEvent.VK_UP)    dy = -SPEED;
         if (key == KeyEvent.VK_DOWN)  dy = SPEED;
         if (key == KeyEvent.VK_ENTER) pause();
+
     }
     
     public void keyReleased(KeyEvent e) {
@@ -58,10 +59,15 @@ public class Craft extends Sprite {
         if (key == KeyEvent.VK_UP)    dy = 0;
         if (key == KeyEvent.VK_DOWN)  dy = 0;
     }
-
+    
+    /**
+     * Creates new missile sprite of currently selected weaponin middle of the 
+     * craft front. 
+     */
     public void fire() {
-        missiles.add(new Missile(x+width, y+height / 2, 
-                weapon.getWeapontype()));
+        missiles.add(new Missile(x-2+width/2, 
+                                 y-height/2, 
+                                 weapon.getWeapontype()));
     }
     
     public void bomb() {
