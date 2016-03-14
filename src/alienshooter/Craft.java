@@ -50,7 +50,6 @@ abstract class Craft extends Sprite {
         if (key == KeyEvent.VK_RIGHT) dx = this.getSpeed();
         if (key == KeyEvent.VK_UP)    dy = -this.getSpeed();
         if (key == KeyEvent.VK_DOWN)  dy = this.getSpeed();
-        if (key == KeyEvent.VK_ENTER) pause();
 
     }
     

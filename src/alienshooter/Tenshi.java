@@ -4,14 +4,13 @@ package alienshooter;
  * Stronger and slower craft. 
  */
 class Tenshi extends Craft {
-    private int hitpoints;
+    private int hitpoints = 100;
     private final int SPEED = 2;
     private final String PICTURE = "images/tenshi.png";
     
     
     public Tenshi(int x, int y) {
         super(x, y);
-        hitpoints = 100;
         loadImage(PICTURE);
         getImageDimensions();
     }

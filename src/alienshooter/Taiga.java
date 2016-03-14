@@ -4,14 +4,13 @@ package alienshooter;
  * Weaker and faster craft.
  */
 class Taiga extends Craft {
-    protected int hitpoints;
+    protected int hitpoints = 50;
     private final int SPEED = 4;
     private final String PICTURE = "images/taiga.png";
     
     
     public Taiga(int x, int y) {
         super(x, y);
-        hitpoints = 50;
         loadImage(PICTURE);
         getImageDimensions();
     }

@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="61cm" height="54cm" viewBox="65 217 1216 1061" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="569.748" y="424.108" width="187.1" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="569.748" y="424.108" width="187.1" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="663.298" y="443.108">Weapon</text>
+    <rect style="fill: #ffffff" x="569.748" y="452.108" width="187.1" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="569.748" y="452.108" width="187.1" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="572.748" y="466.108">+weapontype: Weapontype</text>
+    <rect style="fill: #ffffff" x="569.748" y="472.108" width="187.1" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="569.748" y="472.108" width="187.1" height="8"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="496.748" y="609.108" width="133.2" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="496.748" y="609.108" width="133.2" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="563.348" y="628.108">Laser</text>
+    <rect style="fill: #ffffff" x="496.748" y="637.108" width="133.2" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="496.748" y="637.108" width="133.2" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="499.748" y="651.108">-DAMAGE: int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="499.748" y="667.108">-FIRERATE: int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="499.748" y="683.108">-MISSILE: String</text>
+    <rect style="fill: #ffffff" x="496.748" y="689.108" width="133.2" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="496.748" y="689.108" width="133.2" height="8"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="661.748" y="607.108" width="133.2" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="661.748" y="607.108" width="133.2" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="728.348" y="626.108">Blaster</text>
+    <rect style="fill: #ffffff" x="661.748" y="635.108" width="133.2" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="661.748" y="635.108" width="133.2" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="664.748" y="649.108">-DAMAGE: int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="664.748" y="665.108">-FIRERATE: int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="664.748" y="681.108">-MISSILE: String</text>
+    <rect style="fill: #ffffff" x="661.748" y="687.108" width="133.2" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="661.748" y="687.108" width="133.2" height="8"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="829.748" y="605.108" width="133.2" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="829.748" y="605.108" width="133.2" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="896.348" y="624.108">Zinger</text>
+    <rect style="fill: #ffffff" x="829.748" y="633.108" width="133.2" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="829.748" y="633.108" width="133.2" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="832.748" y="647.108">-DAMAGE: int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="832.748" y="663.108">-FIRERATE: int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="832.748" y="679.108">-MISSILE: String</text>
+    <rect style="fill: #ffffff" x="829.748" y="685.108" width="133.2" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="829.748" y="685.108" width="133.2" height="8"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="843.622" y="280.112" width="123.55" height="44"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="843.622" y="280.112" width="123.55" height="44"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="905.397" y="296.112">&lt;&lt;enum&gt;&gt;</text>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="905.397" y="315.112">Weapontype</text>
+    <rect style="fill: #ffffff" x="843.622" y="324.112" width="123.55" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="843.622" y="324.112" width="123.55" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="846.622" y="338.112">+LASER</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="846.622" y="354.112">+BLASTER</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="846.622" y="370.112">+ZINGER</text>
+    <rect style="fill: #ffffff" x="843.622" y="376.112" width="123.55" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="843.622" y="376.112" width="123.55" height="8"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="462" y="908" width="125.5" height="44"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="462" y="908" width="125.5" height="44"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="524.75" y="924">&lt;&lt;abstract&gt;&gt;</text>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="524.75" y="943">Alien</text>
+    <rect style="fill: #ffffff" x="462" y="952" width="125.5" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="462" y="952" width="125.5" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="465" y="966">-INITIAL_Y: int</text>
+    <rect style="fill: #ffffff" x="462" y="972" width="125.5" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="462" y="972" width="125.5" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="465" y="986">+move()</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="95.332" y="304.186" width="133.2" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="95.332" y="304.186" width="133.2" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="161.932" y="323.186">Player</text>
+    <rect style="fill: #ffffff" x="95.332" y="332.186" width="133.2" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="95.332" y="332.186" width="133.2" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="98.332" y="346.186">-score: int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="98.332" y="362.186">-weapon: Weapon</text>
+    <rect style="fill: #ffffff" x="95.332" y="368.186" width="133.2" height="84"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="95.332" y="368.186" width="133.2" height="84"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="98.332" y="382.186">+getScore()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="98.332" y="398.186">+getWeapon()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="98.332" y="414.186">+setScore()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="98.332" y="430.186">+setWeapon()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="98.332" y="446.186">+increaseScore()</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="303.226" y="302.12" width="148.6" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="303.226" y="302.12" width="148.6" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="377.526" y="321.12">Alienshooter</text>
+    <rect style="fill: #ffffff" x="303.226" y="330.12" width="148.6" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="303.226" y="330.12" width="148.6" height="8"/>
+    <rect style="fill: #ffffff" x="303.226" y="338.12" width="148.6" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="303.226" y="338.12" width="148.6" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="306.226" y="352.12">+main()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="306.226" y="368.12">+initStartScreen()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="306.226" y="384.12">+initGame()</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="663.298,498.344 663.298,552.608 563.348,552.608 563.348,609.108 "/>
+    <polygon style="fill: #ffffff" points="671.298,498.344 663.298,482.344 655.298,498.344 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="671.298,498.344 663.298,482.344 655.298,498.344 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="663.298,498.344 663.298,551.608 728.348,551.608 728.348,607.108 "/>
+    <polygon style="fill: #ffffff" points="671.298,498.344 663.298,482.344 655.298,498.344 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="671.298,498.344 663.298,482.344 655.298,498.344 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="663.298,498.344 663.298,550.608 896.348,550.608 896.348,605.108 "/>
+    <polygon style="fill: #ffffff" points="671.298,498.344 663.298,482.344 655.298,498.344 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="671.298,498.344 663.298,482.344 655.298,498.344 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="243" y="515" width="171.7" height="44"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="243" y="515" width="171.7" height="44"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="328.85" y="531">&lt;&lt;abstract&gt;&gt;</text>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="328.85" y="550">Sprite</text>
+    <rect style="fill: #ffffff" x="243" y="559" width="171.7" height="100"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="243" y="559" width="171.7" height="100"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="246" y="573">-x: int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="246" y="589">-y: int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="246" y="605">-width: int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="246" y="621">-height: int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="246" y="637">-vis: boolean</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="246" y="653">-image: Image</text>
+    <rect style="fill: #ffffff" x="243" y="659" width="171.7" height="132"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="243" y="659" width="171.7" height="132"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="246" y="673">+getX()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="246" y="689">+getY()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="246" y="705">+getImage()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="246" y="721">+getImageDimensions()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="246" y="737">+getBounds()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="246" y="753">+setVisible()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="246" y="769">+loadImage()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="246" y="785">+isVisible()</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="66.8198" y="848.91" width="187.1" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="66.8198" y="848.91" width="187.1" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="160.37" y="867.91">Missile</text>
+    <rect style="fill: #ffffff" x="66.8198" y="876.91" width="187.1" height="68"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="66.8198" y="876.91" width="187.1" height="68"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="69.8198" y="890.91">-BOARD_WIDTH</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="69.8198" y="906.91">-BOARD_HEIGHT</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="69.8198" y="922.91">-MISSILE_SPEED</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="69.8198" y="938.91">-weapontype: Weapontype</text>
+    <rect style="fill: #ffffff" x="66.8198" y="944.91" width="187.1" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="66.8198" y="944.91" width="187.1" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="69.8198" y="958.91">+move()</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="328.85,809.236 328.85,827.955 160.37,827.955 160.37,848.91 "/>
+    <polygon style="fill: #ffffff" points="336.85,809.236 328.85,793.236 320.85,809.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="336.85,809.236 328.85,793.236 320.85,809.236 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="328.85,809.236 328.85,857.5 524.75,857.5 524.75,908 "/>
+    <polygon style="fill: #ffffff" points="336.85,809.236 328.85,793.236 320.85,809.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="336.85,809.236 328.85,793.236 320.85,809.236 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="914.36" y="789.814" width="233.3" height="44"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="914.36" y="789.814" width="233.3" height="44"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="1031.01" y="805.814">&lt;&lt;abstract&gt;&gt;</text>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1031.01" y="824.814">Craft</text>
+    <rect style="fill: #ffffff" x="914.36" y="833.814" width="233.3" height="84"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="914.36" y="833.814" width="233.3" height="84"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="917.36" y="847.814">-dx: int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="917.36" y="863.814">-dy: int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="917.36" y="879.814">#hitpoints: int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="917.36" y="895.814">-SPEED: int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="917.36" y="911.814">-missiles: ArrayList&lt;Missile&gt;</text>
+    <rect style="fill: #ffffff" x="914.36" y="917.814" width="233.3" height="116"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="914.36" y="917.814" width="233.3" height="116"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="917.36" y="931.814">+getMissiles()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="917.36" y="947.814">+getHitpoints()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="917.36" y="963.814">+move()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="917.36" y="979.814">+keyPressed(e:KeyEvent)</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="917.36" y="995.814">+keyReleased(e:KeyEvent)</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="917.36" y="1011.81">+fire()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="917.36" y="1027.81">+pause()</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="328.85,809.236 328.85,828 679.93,828 679.93,768.814 1031.01,768.814 1031.01,789.814 "/>
+    <polygon style="fill: #ffffff" points="336.85,809.236 328.85,793.236 320.85,809.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="336.85,809.236 328.85,793.236 320.85,809.236 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="511.448" y="218.928" width="194.8" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="511.448" y="218.928" width="194.8" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="608.848" y="237.928">Highscore</text>
+    <rect style="fill: #ffffff" x="511.448" y="246.928" width="194.8" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="511.448" y="246.928" width="194.8" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="514.448" y="260.928">-highscore: int</text>
+    <rect style="fill: #ffffff" x="511.448" y="266.928" width="194.8" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="511.448" y="266.928" width="194.8" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="514.448" y="280.928">+getHighscore()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="514.448" y="296.928">+readHighscoreFromDisk()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="514.448" y="312.928">+writeHighscoreToDisk()</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="304.046" y="1057.02" width="164" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="304.046" y="1057.02" width="164" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="386.046" y="1076.02">Deme</text>
+    <rect style="fill: #ffffff" x="304.046" y="1085.02" width="164" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="304.046" y="1085.02" width="164" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="307.046" y="1099.02">+PICTURE: String</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="307.046" y="1115.02">+TYPE: Alientype</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="307.046" y="1131.02">+hitpoints: int = 10</text>
+    <rect style="fill: #ffffff" x="304.046" y="1137.02" width="164" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="304.046" y="1137.02" width="164" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="307.046" y="1151.02">+getType(): String</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="307.046" y="1167.02">+move()</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="907.62" y="1127.58" width="164" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="907.62" y="1127.58" width="164" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="989.62" y="1146.58">Tenshi</text>
+    <rect style="fill: #ffffff" x="907.62" y="1155.58" width="164" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="907.62" y="1155.58" width="164" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="910.62" y="1169.58">-hitpoints: int = 50</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="910.62" y="1185.58">-SPEED: int = 2</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="910.62" y="1201.58">-PICTURE: String</text>
+    <rect style="fill: #ffffff" x="907.62" y="1207.58" width="164" height="68"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="907.62" y="1207.58" width="164" height="68"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="910.62" y="1221.58">+getSpeed()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="910.62" y="1237.58">+getHitpoints()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="910.62" y="1253.58">+setHitpoints()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="910.62" y="1269.58">+decreaseHitpoints()</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1031.01,1052.05 1031.01,1088.7 989.62,1088.7 989.62,1127.58 "/>
+    <polygon style="fill: #ffffff" points="1039.01,1052.05 1031.01,1036.05 1023.01,1052.05 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1039.01,1052.05 1031.01,1036.05 1023.01,1052.05 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1031.01,1052.05 1031.01,1089.74 1194.18,1089.74 1194.18,1129.66 "/>
+    <polygon style="fill: #ffffff" points="1039.01,1052.05 1031.01,1036.05 1023.01,1052.05 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1039.01,1052.05 1031.01,1036.05 1023.01,1052.05 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="524.75,1010.24 524.75,1032.51 386.046,1032.51 386.046,1057.02 "/>
+    <polygon style="fill: #ffffff" points="532.75,1010.24 524.75,994.236 516.75,1010.24 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="532.75,1010.24 524.75,994.236 516.75,1010.24 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="524.75,1010.24 524.75,1032.1 565.122,1032.1 565.122,1056.19 "/>
+    <polygon style="fill: #ffffff" points="532.75,1010.24 524.75,994.236 516.75,1010.24 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="532.75,1010.24 524.75,994.236 516.75,1010.24 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="524.75,1010.24 524.75,1031.65 753.72,1031.65 753.72,1055.29 "/>
+    <polygon style="fill: #ffffff" points="532.75,1010.24 524.75,994.236 516.75,1010.24 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="532.75,1010.24 524.75,994.236 516.75,1010.24 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1108.33" y="1129.66" width="171.7" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1108.33" y="1129.66" width="171.7" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1194.18" y="1148.66">Taiga</text>
+    <rect style="fill: #ffffff" x="1108.33" y="1157.66" width="171.7" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1108.33" y="1157.66" width="171.7" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1111.33" y="1171.66">-hitpoints: int = 100</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1111.33" y="1187.66">-SPEED: int = 4</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1111.33" y="1203.66">-PICTURE: String</text>
+    <rect style="fill: #ffffff" x="1108.33" y="1209.66" width="171.7" height="68"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1108.33" y="1209.66" width="171.7" height="68"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1111.33" y="1223.66">+getSpeed()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1111.33" y="1239.66">+getHitpoints()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1111.33" y="1255.66">+setHitpoints()</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="1111.33" y="1271.66">+decreaseHitpoints()</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="835.79,334.556 835.79,379.332 663.298,379.332 663.298,407.108 "/>
+    <path style="fill: #ffffff" d="M 663.298 423.108 C 659.298,423.108 655.298,419.108 655.298,415.108 C 655.298,411.108 659.298,407.108 663.298,407.108 C 667.298,407.108 671.298,411.108 671.298,415.108 C 671.298,419.108 667.298,423.108 663.298,423.108z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 663.298 423.108 C 659.298,423.108 655.298,419.108 655.298,415.108 C 655.298,411.108 659.298,407.108 663.298,407.108 C 667.298,407.108 671.298,411.108 671.298,415.108 C 671.298,419.108 667.298,423.108 663.298,423.108"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="835.79" y="314.556">
+      <tspan x="835.79" y="314.556"></tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="483.122" y="1056.19" width="164" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="483.122" y="1056.19" width="164" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="565.122" y="1075.19">Deme</text>
+    <rect style="fill: #ffffff" x="483.122" y="1084.19" width="164" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="483.122" y="1084.19" width="164" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="486.122" y="1098.19">+PICTURE: String</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="486.122" y="1114.19">+TYPE: Alientype</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="486.122" y="1130.19">+hitpoints: int = 20</text>
+    <rect style="fill: #ffffff" x="483.122" y="1136.19" width="164" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="483.122" y="1136.19" width="164" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="486.122" y="1150.19">+getType(): String</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="486.122" y="1166.19">+move()</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="671.72" y="1055.29" width="164" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="671.72" y="1055.29" width="164" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="753.72" y="1074.29">Xeno</text>
+    <rect style="fill: #ffffff" x="671.72" y="1083.29" width="164" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="671.72" y="1083.29" width="164" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="674.72" y="1097.29">+PICTURE: String</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="674.72" y="1113.29">+TYPE: Alientype</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="674.72" y="1129.29">+hitpoints: int = 30</text>
+    <rect style="fill: #ffffff" x="671.72" y="1135.29" width="164" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="671.72" y="1135.29" width="164" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="674.72" y="1149.29">+getType(): String</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="674.72" y="1165.29">+move()</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="667.898" y="871.06" width="96.05" height="44"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="667.898" y="871.06" width="96.05" height="44"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="715.923" y="887.06">&lt;&lt;enum&gt;&gt;</text>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="715.923" y="906.06">Alientype</text>
+    <rect style="fill: #ffffff" x="667.898" y="915.06" width="96.05" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="667.898" y="915.06" width="96.05" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="670.898" y="929.06">+GORO</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="670.898" y="945.06">+DEME</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="670.898" y="961.06">+XENO</text>
+    <rect style="fill: #ffffff" x="667.898" y="967.06" width="96.05" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="667.898" y="967.06" width="96.05" height="8"/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="667.898,925.06 627.699,925.06 627.699,962 604.5,962 "/>
+    <path style="fill: #ffffff" d="M 588.5 962 C 588.5,958 592.5,954 596.5,954 C 600.5,954 604.5,958 604.5,962 C 604.5,966 600.5,970 596.5,970 C 592.5,970 588.5,966 588.5,962z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 588.5 962 C 588.5,958 592.5,954 596.5,954 C 600.5,954 604.5,958 604.5,962 C 604.5,966 600.5,970 596.5,970 C 592.5,970 588.5,966 588.5,962"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="698.17" y="921.696">
+      <tspan x="698.17" y="921.696"></tspan>
+    </text>
+  </g>
+</svg>
