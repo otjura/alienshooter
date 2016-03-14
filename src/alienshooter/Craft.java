@@ -36,6 +36,8 @@ abstract class Craft extends Sprite {
     public int getDamage() { return weapon.getDamage(); }
     public String getWeapon() { return weapon.getWeapontype().toString(); }
     
+    public int getSpeed() { return SPEED;}
+    
     public void setHitpoints(int hitpoints) { this.hitpoints = hitpoints; }
     public void decreaseHitpoints(int dmg) { hitpoints -= dmg; } 
     
@@ -44,10 +46,10 @@ abstract class Craft extends Sprite {
         if (key == KeyEvent.VK_Z)     fire();
         if (key == KeyEvent.VK_X)     bomb();
         if (key == KeyEvent.VK_C)     changeWeapon();
-        if (key == KeyEvent.VK_LEFT)  dx = -SPEED;
-        if (key == KeyEvent.VK_RIGHT) dx = SPEED;
-        if (key == KeyEvent.VK_UP)    dy = -SPEED;
-        if (key == KeyEvent.VK_DOWN)  dy = SPEED;
+        if (key == KeyEvent.VK_LEFT)  dx = -this.getSpeed();
+        if (key == KeyEvent.VK_RIGHT) dx = this.getSpeed();
+        if (key == KeyEvent.VK_UP)    dy = -this.getSpeed();
+        if (key == KeyEvent.VK_DOWN)  dy = this.getSpeed();
         if (key == KeyEvent.VK_ENTER) pause();
 
     }

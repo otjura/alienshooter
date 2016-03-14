@@ -17,6 +17,9 @@ class Taiga extends Craft {
     }
     
     @Override
+    public int getSpeed() { return SPEED; }
+    
+    @Override
     public int getHitpoints() { return hitpoints; }
     
     @Override
